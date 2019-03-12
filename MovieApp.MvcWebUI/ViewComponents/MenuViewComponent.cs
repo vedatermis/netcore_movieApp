@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using MovieApp.MvcWebUI.Models;
 
 namespace MovieApp.MvcWebUI.ViewComponents
@@ -7,7 +7,7 @@ namespace MovieApp.MvcWebUI.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedCategory = RouteData.Values["id"];
+            ViewBag.SelectedCategory = RouteData?.Values["id"];
             return View(CategoryRepository.Categories);
         }
     }
