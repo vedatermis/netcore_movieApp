@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using MovieApp.MvcWebUI.Models;
 
 namespace MovieApp.MvcWebUI.Controllers
 {
@@ -10,7 +7,12 @@ namespace MovieApp.MvcWebUI.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(MovieRepository.Movies);
+        }
+
+        public IActionResult Details(int id)
+        {
+            return View(MovieRepository.GetById(id));
         }
     }
 }
