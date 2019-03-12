@@ -1,8 +1,13 @@
 ﻿@model IEnumerable<Category>
 
-<ul class="list-group">
+<div class="list-group">
+    <a href="/Movie/List" class="list-group-item list-group-item-action">All Movies</a>
     @foreach (var category in Model)
     {
-        <li class="list-group-item">@category.Name</li>
+        <a
+            asp-controller="Movie"
+            asp-action="List"
+            asp-route-id="@category.Id"
+            class="list-group-item list-group-item-action">@category.Name</a>
     }
-</ul>
+</div>

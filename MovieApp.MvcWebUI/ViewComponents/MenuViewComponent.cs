@@ -7,6 +7,7 @@ namespace MovieApp.MvcWebUI.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedCategory = RouteData.Values["id"];
             return View(CategoryRepository.Categories);
         }
     }
